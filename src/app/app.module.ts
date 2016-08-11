@@ -1,22 +1,30 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, ApplicationRef } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { appRouterProviders } from "./app.routes";
+import { RouterModule } from "@angular/router";
+import { CmpntComponent } from './shared/cmpnt/cmpnt.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
+  declarations   : [
+    AppComponent,
+    DashboardComponent,
+    CmpntComponent
   ],
-  imports: [
+  imports        : [
     BrowserModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    RouterModule,
   ],
-  providers: [],
-  entryComponents: [AppComponent],
-  bootstrap: [AppComponent]
+  providers      : [
+    appRouterProviders,
+  ],
+  entryComponents: [ AppComponent ],
+  bootstrap      : [ AppComponent ]
 })
 export class AppModule {
-
 }
